@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+void generate_subsequence(char *inn, char *out, int i, int j){
+    if(inn[i]=='\0'){
+        out[j]='\0';
+        cout<<out<<" "<<endl;
+        return;
+    }
+     out[j]=inn[i];
+    generate_subsequence(inn, out, i+1, j+1);
+    generate_subsequence(inn, out, i+1, j);
+
+}
+
+int main() {
+	int n;
+	cin>>n;
+	while(n--){
+    char input[50];
+    cin>>input;
+
+    char output[50];
+
+    generate_subsequence(input,output,0,0);
+  }
+    return 0;
+}
